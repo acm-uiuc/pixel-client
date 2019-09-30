@@ -20,7 +20,8 @@ def main(argv):
                      {'term_manager': term_manager}),
                 (r"/", TerminalPageHandler),
                 (r"/xstatic/(.*)", tornado_xstatic.XStaticFileHandler,
-                     {'allowed_modules': ['termjs']})
+                     {'allowed_modules': ['termjs']}),
+                (r"/(.*)", tornado.web.StaticFileHandler, {"path": "./client"})
                ]
     app = tornado.web.Application(handlers, static_path=STATIC_DIR,
                       template_path=TEMPLATE_DIR,

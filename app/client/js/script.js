@@ -1,53 +1,14 @@
-<!DOCTYPE html>
-<head>
-<meta charset="UTF-8"> 
-<title>Pixel Client</title>
-<style>
-  html {
-    background: #555;
-  }
-  h1 {
-    margin-bottom: 20px;
-    font: 20px/1.5 sans-serif;
-  }
-</style>
-<script src="{{ xstatic('termjs', 'term.js') }}"></script>
-<script src="{{ static('terminado.js') }}"></script>
-<script>
-</script>
-</head>
-<body>
-<!-- test size: 25x80 -->
-    <header><h1>Pixel Client</h1></header>
-<pre id="dummy-screen" style="visibility:hidden; border: white solid 5px; font-family: &quot;DejaVu Sans Mono&quot;, &quot;Liberation Mono&quot;, monospace; font-size: 11px;">0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-0
-1
-2
-3
-<span id="dummy-screen-rows" style="visibility:hidden;">01234567890123456789012345678901234567890123456789012345678901234567890123456789</span>
-</pre>
-    <script src="./script.js"></script>
-    <script>
-    
+/*monaco.editor.create(document.getElementById('editor'), {
+  value: [
+    'def main():',
+    '  print("hello world")',
+    '  ',
+    'main()'
+  ].join('\n'),
+  language: 'python'
+});*/
+
+
 window.onload = function() {
     // Test size: 25x80
     var termRowHeight = 0.0 + 1.00*document.getElementById("dummy-screen").offsetHeight / 25;
@@ -73,7 +34,3 @@ window.onload = function() {
                                 window.innerHeight, window.innerWidth]));
     };
 };
-
-    </script>
-</body>
-</html>
