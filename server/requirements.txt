@@ -1,3 +1,5 @@
-terminado==0.8.2
-tornado==6.0.3
-tornado-xstatic==0.2
+terminado
+tornado
+tornado-xstatic
+XStatic
+XStatic-term.js

@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "A web client for ACM Pixel",
   "main": "index.html",
+  "engines": {
+    "node": "<=8.16"
+  },
   "scripts": {
-    "build": "npx webpack && cp ./client/index.html ./dist/index.html",
-    "app": "npm run build && python3 ./server/app.py",
+    "app": "node ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -32,6 +34,7 @@
     "webpack-cli": "^3.3.8"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "monaco-editor": "^0.18.1",
     "xterm": "^4.0.1"
   }
