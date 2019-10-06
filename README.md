@@ -14,7 +14,7 @@ Requirements: node.js, python3
 
 ```bash
 npm install
-pip3 install -r ./server/requirements.txt
+pip3 install -r ./app/requirements.txt
 ```
 
 ## Running the server
