@@ -63,7 +63,7 @@
     document.getElementById("dummy-screen").setAttribute("style", "display: none");
     var protocol = (window.location.protocol.indexOf("https") === 0) ? "wss" : "ws";
     var ws_url = protocol+"://"+window.location.host+ "{{ws_url_path}}";
-    
+    console.log(ws_url)
     function calculate_size(element) {
         var rows = Math.max(2, Math.floor(element.innerHeight/termRowHeight)-1);
         var cols = Math.max(3, Math.floor(element.innerWidth/termColWidth)-1);
@@ -80,7 +80,6 @@
       terminal.socket.send(JSON.stringify(["set_size", geom.rows, geom.cols,
                                 window.innerHeight, window.innerWidth]));
     };
-};
 </script>
   <script src="./js/script.js"></script>
 </body>
