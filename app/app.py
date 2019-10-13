@@ -4,7 +4,7 @@ import tornado.web
 # This demo requires tornado_xstatic and XStatic-term.js
 import tornado_xstatic
 
-from terminado import TermSocket, SingleTermManager
+from terminado import TermSocket, SingleTermManager, UniqueTermManager
 from common import run_and_show_browser, STATIC_DIR, TEMPLATE_DIR
 
 class TerminalPageHandler(tornado.web.RequestHandler):
@@ -26,8 +26,8 @@ def main(argv):
     app = tornado.web.Application(handlers, static_path=STATIC_DIR,
                       template_path=TEMPLATE_DIR,
                       xstatic_url = tornado_xstatic.url_maker('/xstatic/'))
-    app.listen(3000, 'localhost')
-    run_and_show_browser("http://localhost:3000/", term_manager)
+    app.listen(80, '0.0.0.0')
+    run_and_show_browser("http://0.0.0.0/", term_manager)
 
 if __name__ == '__main__':
     main([])
