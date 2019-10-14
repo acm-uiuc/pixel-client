@@ -21,7 +21,7 @@ class ProtectedTermManager(SingleTermManager):
         self.terminal = None
 
     def user_gen(self):
-        uuid_str = "User"+str(uuid.uuid())
+        uuid_str = "User"+str(uuid.uuid4())
 
         return ['bash']
 
