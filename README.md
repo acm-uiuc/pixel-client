@@ -27,7 +27,18 @@ docker build --tag=pixel-client .
 
 # to build and run the application
 docker build --tag=pixel-client .
-docker run -p 3000:80 pixel-client
+docker run --name pixel_client -p 3000:80 pixel-client
+```
+
+## Restarting the server
+
+```bash
+# to shut down the application
+docker rm -f pixel_client
+
+# to rebuild and run the application
+docker build --tag=pixel-client .
+docker run --name pixel_client -p 3000:80 pixel-client
 ```
 
 TODO: improve setup and allow for "watch" style builds and add a script that automatically does all of this
