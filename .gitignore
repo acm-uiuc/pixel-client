@@ -65,3 +65,6 @@ typings/
 
 # VS code options
 ./.idea/
+
+# pycache
+./app\__pycache__

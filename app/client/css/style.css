@@ -1,0 +1,53 @@
+html {
+    background: #ffffff;
+}
+header {
+    grid-area: header;
+    background-color: #5B6F81;
+    color: white;
+    font-size: 18pt;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+header > h1 {
+    padding: 0;
+    margin: 0;
+}
+#info {
+    grid-area: info;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow: scroll;
+    padding: 30px;
+}
+code {
+    background-color: #f0f0f0;
+    margin-left: 20px;
+    border-radius: 5%;
+    padding: 5px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-areas: "header header"
+    "editor info"
+    "editor terminal";
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 7vh 45vh 50vh;
+    width: 100vh;
+    height: 100vw;
+    overflow: hidden;
+}
+.CodeMirror {
+    grid-area: editor;
+    width: 100%;
+    height: 100%;
+}
+#terminal {
+    background-color: black;
+    grid-area: terminal;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 50vh;
+}

@@ -10,21 +10,24 @@ Client Backend: Tornado webserver in python (Needed to forward terminal output v
 
 ## Setup
 
-Requirements: node.js, python3
+Requirements: node.js, docker
 
 ```bash
+cd ./app/client
 npm install
-pip3 install -r ./app/requirements.txt
+cd ..
+docker build --tag=pixel-client .
 ```
 
 ## Running the server
 
 ```bash
 # to build the application
-npm run build
+docker build --tag=pixel-client .
 
 # to build and run the application
-npm run app
+docker build --tag=pixel-client .
+docker run -p 3000:80 pixel-client
 ```
 
-TODO: improve setup and allow for "watch" style builds
+TODO: improve setup and allow for "watch" style builds and add a script that automatically does all of this
