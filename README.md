@@ -16,29 +16,32 @@ Requirements: node.js, docker
 cd ./app/client
 npm install
 cd ..
-docker build --tag=pixel-client .
+docker build -t pixel-client .
 ```
 
 ## Running the server
 
 ```bash
 # to build the application
-docker build --tag=pixel-client .
+docker build -t pixel-client .
 
 # to build and run the application
-docker build --tag=pixel-client .
-docker run --name pixel_client -p 3000:80 pixel-client
+docker build -t pixel-client .
+docker run -d -p 3000:80 --name pixel_client pixel-client
 ```
 
-## Restarting the server
+## Updating the server
 
 ```bash
-# to shut down the application
+# to build updated version
+docker build -t pixel-client .
+
+# to remove current container
 docker rm -f pixel_client
 
-# to rebuild and run the application
-docker build --tag=pixel-client .
-docker run --name pixel_client -p 3000:80 pixel-client
+# to run the new container
+docker run -d -p 3000:80 --name pixel_client pixel-client
 ```
+
 
 TODO: improve setup and allow for "watch" style builds and add a script that automatically does all of this
