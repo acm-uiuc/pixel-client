@@ -3,27 +3,11 @@
 import tornado.web
 # This demo requires tornado_xstatic and XStatic-term.js
 import tornado_xstatic
-import uuid
 
-
-from terminado import TermSocket, SingleTermManager, UniqueTermManager
-from common import run_and_show_browser, STATIC_DIR, TEMPLATE_DIR
-
-class TerminalPageHandler(tornado.web.RequestHandler):
-    def get(self):
-        return self.render("index.html", static=self.static_url,
-                           xstatic=self.application.settings['xstatic_url'],
-                           ws_url_path="/websocket")
-
-class ProtectedTermManager(SingleTermManager):
-    def __init__(self, **kwargs):
-        super(SingleTermManager, self).__init__(shell_command=self.user_gen(), **kwargs)
-        self.terminal = None
-
-    def user_gen(self):
-        uuid_str = "User"+str(uuid.uuid4())
-
-        return ['bash']
+from terminado import TermSocket
+from util.common import run_and_show_browser, STATIC_DIR, TEMPLATE_DIR
+from handlers.terminal_page_handler import TerminalPageHandler
+from handlers.protected_term_manager import ProtectedTermManager
 
 def main(argv):
     term_manager = ProtectedTermManager()
