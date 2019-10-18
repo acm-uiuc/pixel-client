@@ -4,7 +4,7 @@ import tornado.ioloop
 import terminado
 
 STATIC_DIR = os.path.join(os.path.dirname(terminado.__file__), "_static")
-TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), "client")
+TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), "../client")
 
 def run_and_show_browser(url, term_manager):
     loop = tornado.ioloop.IOLoop.instance()

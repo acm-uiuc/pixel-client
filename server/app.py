@@ -4,7 +4,9 @@ import tornado.web
 # This demo requires tornado_xstatic and XStatic-term.js
 import tornado_xstatic
 import uuid
-
+import os
+import random
+import string
 
 from terminado import TermSocket, SingleTermManager, UniqueTermManager
 from common import run_and_show_browser, STATIC_DIR, TEMPLATE_DIR
@@ -15,15 +17,24 @@ class TerminalPageHandler(tornado.web.RequestHandler):
                            xstatic=self.application.settings['xstatic_url'],
                            ws_url_path="/websocket")
 
-class ProtectedTermManager(SingleTermManager):
+class ProtectedTermManager(UniqueTermManager):
     def __init__(self, **kwargs):
-        super(SingleTermManager, self).__init__(shell_command=self.user_gen(), **kwargs)
+        self.max_terminals = 500
+        command = self.user_gen()
+        super(UniqueTermManager, self).__init__(shell_command=command, **kwargs)
         self.terminal = None
 
     def user_gen(self):
-        uuid_str = "User"+str(uuid.uuid4())
+        userid = "User"+randomString(28)
+        os.system('useradd -m '+userid)
 
-        return ['bash']
+        return ["su", "-l", userid]
+
+
+def randomString(stringLength=10):
+    """Generate a random string of fixed length """
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for i in range(stringLength))
 
 def main(argv):
     term_manager = ProtectedTermManager()
