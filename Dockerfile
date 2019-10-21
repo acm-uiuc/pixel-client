@@ -14,4 +14,4 @@ RUN pip install --trusted-host pypi.python.org -r ./server/requirements.txt
 EXPOSE 80
 
 # Run app.py when the container launches
-CMD ["python", "./server/app.py"]
+CMD ["python", "-u", "./server/app.py"]
