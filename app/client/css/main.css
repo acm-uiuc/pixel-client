@@ -1,0 +1,22 @@
+#home {
+  background: #e0e01f;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font: 20px/1.5 sans-serif;
+}
+
+giheader {
+  text-align: center;
+}
+
+.split, .gutter.gutter-horizontal {
+  float: left;
+  background: red;
+}
+
+.gutter.gutter-horizontal {
+  cursor: ew-resize;
+  background: red;
+}
