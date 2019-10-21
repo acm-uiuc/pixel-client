@@ -16,15 +16,19 @@
 <body>
   <!-- test size: 25x80 -->
   <header>
+
     <h1>Pixel Client</h1>
-    <select>
-      <option value = "python"> Python </option>
-      <option value = "java"> Java </option>
-      <option value = "c++"> C++ </option>
-      <option value = "rust"> Rust </option>
-      <option value = "haskell"> Haskell </option>
+
+    <select id="language-selector">
+      <option value="python"> Python </option>
+      <option value="java"> Java </option>
+      <option value="c++"> C++ </option>
+      <option value="rust"> Rust </option>
+      <option value="haskell"> Haskell </option>
     </select>
+
   </header>
+
   <pre id="dummy-screen" style="visibility:hidden; border: white solid 5px; font-family: &quot;DejaVu Sans Mono&quot;, &quot;Liberation Mono&quot;, monospace; font-size: 11px;">0
 1
 2
@@ -51,6 +55,8 @@
 3
 <span id="dummy-screen-rows" style="visibility:hidden;">01234567890123456789012345678901234567890123456789012345678901234567890123456789</span>
 </pre>
+
+
   <div id="info">
     <h2>Information about Pixel</h2>
     <p>
@@ -67,12 +73,25 @@
     </p>
     <a href="/next">Next Lesson</a>
   </div>
-  <div id="terminal"></div>
+
+  <div id="input">
+
+    <div id="terminal"></div>
+
+    <div id="editor"></div>
+
+  </div>
+
+  <!-- scripts -->
   <script src="./js/editor.js"></script>
   <script>
     let ws_url_path = "{{ws_url_path}}"
   </script>
+  <script src="https://unpkg.com/split-grid/dist/split-grid.js"></script>
   <script src="./js/script.js"></script>
+  <script src="./js/main.js"></script>
+
+
 </body>
 
 </html>
