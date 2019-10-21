@@ -18,12 +18,13 @@ header>h1 {
 
 #language-selector {
   float: right;
-  padding-bottom: 40px;
-  padding-right: 40px;
+  margin-bottom: 10px;
+  margin-right: 30px;
+  padding-right: 10px;
 }
 
 #info {
-  grid-area: info;
+  /*grid-area: info;*/
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow: scroll;
   padding: 30px;
@@ -36,6 +37,7 @@ code {
   padding: 5px;
 }
 
+/*
 body {
   margin: 0;
   padding: 0;
@@ -49,19 +51,28 @@ body {
   height: 100vw;
   overflow: hidden;
 }
-
+*/
 .CodeMirror {
-  grid-area: editor;
+  /*grid-area: editor;*/
   width: 100%;
   height: 100%;
 }
 
 #terminal {
   background-color: black;
-  grid-area: terminal;
+  /*grid-area: terminal;*/
   padding: 0;
   margin: 0;
   width: 100%;
   height: 100%;
   max-height: 50vh;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.gutter.gutter-horizontal {
+  cursor: ew-resize;
 }
