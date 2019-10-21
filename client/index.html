@@ -1,57 +1,12 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Pixel Client</title>
-    <script src="{{ xstatic('termjs', 'term.js') }}"></script>
-    <script src="{{ static('terminado.js') }}"></script>
-  </head>
-
-  <body>
-  <!-- test size: 25x80 -->
-      <header><h1>Pixel Client</h1></header>
-  <pre id="dummy-screen" style="visibility:hidden; border: white solid 5px; font-family: &quot;DejaVu Sans Mono&quot;, &quot;Liberation Mono&quot;, monospace; font-size: 11px;">
-    0
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    0
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    0
-    1
-    2
-    3
-    <span id="dummy-screen-rows" style="visibility:hidden;">01234567890123456789012345678901234567890123456789012345678901234567890123456789</span>
-  </pre>
-    <script src="./js/main.js"></script>
-    <script src="./js/script.js"></script>
-  </body>
-=======
 
 <head>
   <meta charset="UTF-8">
   <title>Pixel Client</title>
-  <style>
-  </style>
-  <script src="./node_modules/codemirror/lib/codemirror.js"></script>
   <link rel="stylesheet" href="./node_modules/codemirror/lib/codemirror.css">
   <link rel="stylesheet" href="./css/editor.css">
   <link rel="stylesheet" href="./css/style.css">
+  <script src="./node_modules/codemirror/lib/codemirror.js"></script>
   <script src="./node_modules/codemirror/mode/python/python.js"></script>
   <script src="./node_modules/codemirror/mode/javascript/javascript.js"></script>
   <script src="{{ xstatic('termjs', 'term.js') }}"></script>
@@ -62,6 +17,13 @@
   <!-- test size: 25x80 -->
   <header>
     <h1>Pixel Client</h1>
+    <select>
+      <option value = "python"> Python </option>
+      <option value = "java"> Java </option>
+      <option value = "c++"> C++ </option>
+      <option value = "rust"> Rust </option>
+      <option value = "haskell"> Haskell </option>
+    </select>
   </header>
   <pre id="dummy-screen" style="visibility:hidden; border: white solid 5px; font-family: &quot;DejaVu Sans Mono&quot;, &quot;Liberation Mono&quot;, monospace; font-size: 11px;">0
 1
@@ -89,27 +51,28 @@
 3
 <span id="dummy-screen-rows" style="visibility:hidden;">01234567890123456789012345678901234567890123456789012345678901234567890123456789</span>
 </pre>
-<div id="info">
-  <h2>Information about Pixel</h2>
-  <p>
+  <div id="info">
+    <h2>Information about Pixel</h2>
+    <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec nulla condimentum ligula placerat sodales. Aliquam erat volutpat.
-  </p>
-  <code>print("Hello world")</code>
-  <p>
+    </p>
+    <code>print("Hello world")</code>
+    <p>
       Phasellus eget consequat magna. Integer pharetra pretium sem in venenatis. Morbi vitae tristique dui, id sodales felis. </p>
-  <p>
+    <p>
       Nunc eleifend, mauris ut porta vehicula, dolor libero lacinia nulla, vel rutrum felis elit eget ipsum. Phasellus molestie blandit tortor, ac fermentum risus faucibus sed. In quam quam, blandit eu tincidunt cursus, pretium id diam.
-  </p>
-  <p>
+    </p>
+    <p>
       Nullam nunc nulla, eleifend eu leo sed, semper eleifend ex.
-  </p>
-  <a href="/next">Next Lesson</a>
-</div>
-<div id="terminal"></div>  
-<script src="./js/editor.js"></script>
-<script>let ws_url_path = "{{ws_url_path}}"</script>
-<script src="./js/script.js"></script>
+    </p>
+    <a href="/next">Next Lesson</a>
+  </div>
+  <div id="terminal"></div>
+  <script src="./js/editor.js"></script>
+  <script>
+    let ws_url_path = "{{ws_url_path}}"
+  </script>
+  <script src="./js/script.js"></script>
 </body>
 
->>>>>>> 8c3773e341870a1d2844d4979347e8b6336dd2a9
 </html>
