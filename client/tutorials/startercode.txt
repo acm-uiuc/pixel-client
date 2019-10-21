@@ -1,0 +1,26 @@
+// To print a statement
+print("Text goes here")
+
+// Storing values in variables: 
+//x stores integer values
+x = 1
+//y stores floating type values
+y = 1.0
+//string1 and string2 both store string values
+string1 = "text"
+string2 = 'text'
+//But using "..." is more useful when the string has apostrophes as well
+string3 = "Here's a string that includes apostrophes"
+
+// Basic operators:
+one = 1
+two = 2
+//prints the sum of one and two
+print(one + two)
+
+hello = "hello"
+world = "world"
+//prints "hello world"
+print(hello + " " +  world)
+
+
