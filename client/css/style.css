@@ -17,7 +17,9 @@ header>h1 {
 }
 
 #language-selector {
-  text-align: right
+  float: right;
+  padding-bottom: 40px;
+  padding-right: 40px;
 }
 
 #info {
