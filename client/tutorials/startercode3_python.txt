@@ -4,6 +4,9 @@ two = 2
 //prints the sum of one and two
 print(one + two)
 
+int_three = 3
+float_three = (float)int_three
+
 hello = "hello"
 world = "world"
 //prints "hello world"
