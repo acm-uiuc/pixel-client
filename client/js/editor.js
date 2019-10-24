@@ -29,7 +29,9 @@ let myCodeMirror = CodeMirror(elm, {
   lineNumbers: true
 });
 
-setTimeout(function() {
+setTimeout(function() {myCodeMirror.refresh();}, 1000)
+
+function uploadCode() {
   fetch("./file", {
   method: "post",
   headers: {
@@ -39,12 +41,11 @@ setTimeout(function() {
 
   //make sure to serialize your JSON body
   body: JSON.stringify({
-    name: "test.txt",
-    contents: "asdf"
+    name: "script.py",
+    contents: myCodeMirror.getValue()
   })
 })
 .then( (response) => {
   console.log(response)
 });
-myCodeMirror.refresh();
-}, 1000)
+}
