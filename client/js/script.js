@@ -4,7 +4,7 @@ var termRowHeight = 0.0 + 1.00*document.getElementById("dummy-screen").offsetHei
 var termColWidth = 0.0 + (1.02*document.getElementById("dummy-screen-rows").offsetWidth / 80);
 document.getElementById("dummy-screen").setAttribute("style", "display: none");
 var protocol = (window.location.protocol.indexOf("https") === 0) ? "wss" : "ws";
-var ws_url = protocol+"://"+window.location.host+ws_url_path;
+var ws_url = protocol+"://"+window.location.host+'/websocket';
 console.log(ws_url)
 function calculate_size(element) {
     var rows = Math.max(2, Math.floor((element.innerHeight/2)/termRowHeight)-1);

@@ -5,7 +5,8 @@ value = `import requests
 
 # Draws a pixel with color at (x, y)
 def draw_pixel(x, y, color):
-    requests.post('http://pixel.acm.illinois.edu', data={'x': str(x), 'y': str(y), 'color': color})
+    requests.post('http://pixel.acm.illinois.edu',
+                  data={'x': str(x), 'y': str(y), 'color': color})
 
 
 # Draws a red (#FF0000) square.
@@ -21,13 +22,15 @@ def draw_red_square(x1, y1, x2, y2):
 draw_red_square(0,0,10,10)
 `
 
-var myCodeMirror = CodeMirror(document.body, {
+let elm = document.createElement('div');
+let myCodeMirror = CodeMirror(elm, {
   value: value,
   mode: "python",
   lineNumbers: true
 });
 
-setTimeout(function() {fetch("./file", {
+setTimeout(function() {
+  fetch("./file", {
   method: "post",
   headers: {
     'Accept': 'application/json',
@@ -40,29 +43,8 @@ setTimeout(function() {fetch("./file", {
     contents: "asdf"
   })
 })
-.then( (response) => { 
-  console.log(response)
-});}, 2000)
-// var myCodeMirror2 = CodeMirror.fromTextArea(, {
-//   value: "#This is python\nmyScript():\n\tprint \'test\'",
-//   mode: "python"
-// });
-
-
-
-fetch("./file", {
-  method: "post",
-  headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json'
-  },
-
-  //make sure to serialize your JSON body
-  body: JSON.stringify({
-    name: "test.txt",
-    contents: "asdf"
-  })
-})
-.then( (response) => { 
+.then( (response) => {
   console.log(response)
 });
+myCodeMirror.refresh();
+}, 1000)
