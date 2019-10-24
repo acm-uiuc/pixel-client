@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./node_modules/codemirror/lib/codemirror.css">
   <link rel="stylesheet" href="./css/editor.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/bootstrap.css">
 
   <script src="./node_modules/codemirror/lib/codemirror.js"></script>
   <script src="./node_modules/codemirror/mode/python/python.js"></script>
@@ -24,19 +25,30 @@
 <body>
   <!-- test size: 25x80 -->
   <header>
+    <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <h1> Pixel Client </h1>
+        </div>
+        <div class="navbar-right">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="language-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Language Selector
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Python</a>
+              <a class="dropdown-item" href="#">Java</a>
+              <a class="dropdown-item" href="#">C++</a>
+              <a class="dropdown-item" href="#">Rust</a>
+              <a class="dropdown-item" href="#">Haskell</a>
+            </div>
+          </div>
 
-    <h1>Pixel Client</h1>
-
-    <select id="language-selector">
-      <option value="python"> Python </option>
-      <option value="java"> Java </option>
-      <option value="c++"> C++ </option>
-      <option value="rust"> Rust </option>
-      <option value="haskell"> Haskell </option>
-    </select>
-
+        </div>
+      </div>
+    </nav>
   </header>
-<!--
+
   <pre id="dummy-screen" style="visibility:hidden; border: white solid 5px; font-family: &quot;DejaVu Sans Mono&quot;, &quot;Liberation Mono&quot;, monospace; font-size: 11px;">0
 1
 2
@@ -64,7 +76,7 @@
 <span id="dummy-screen-rows" style="visibility:hidden;">01234567890123456789012345678901234567890123456789012345678901234567890123456789</span>
 </pre>
 
--->
+
   <div id="info">
     <h2>Information about Pixel</h2>
     <p>
@@ -96,6 +108,7 @@
     let ws_url_path = "{{ws_url_path}}"
   </script>
   <script src="https://unpkg.com/split-grid/dist/split-grid.js"></script>
+  <script src="./js/bootstrap.js"></script>
   <script src="./js/script.js"></script>
   <script src="./js/main.js"></script>
 
