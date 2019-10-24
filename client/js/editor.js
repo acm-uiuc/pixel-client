@@ -5,6 +5,11 @@ let myCodeMirror = CodeMirror(elm, {
   lineNumbers: true
 });
 
+function changeLanguage() {
+  var language = document.getElementById("language_selector").value;
+  myCodeMirror.mode = language;
+}
+
 setTimeout(function() {
   fetch("./file", {
   method: "post",
