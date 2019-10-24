@@ -5,7 +5,7 @@ FROM python:3-slim
 WORKDIR /user
 RUN apt-get update
 RUN apt-get -y install gcc
-RUN pip install psutil
+RUN pip install psutil requests
 
 # Copy the current directory contents into the container at /app
 COPY . /user

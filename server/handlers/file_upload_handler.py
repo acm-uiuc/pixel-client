@@ -10,4 +10,5 @@ class FileUploadHandler(tornado.web.RequestHandler):
         file_upload = json.loads(body)
         tmp = tempfile.NamedTemporaryFile()
         tmp.write(str.encode(file_upload["contents"]))
+        print(file_upload["contents"])
         os.system("./lib/docker cp "+tmp.name+" "+userid+":/user/"+file_upload["name"])
