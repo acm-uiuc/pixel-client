@@ -12,10 +12,11 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/bootstrap.css">
 
-  <script src="./node_modules/codemirror/lib/codemirror.js"></script>
-  <script src="./node_modules/codemirror/mode/python/python.js"></script>
-  <script src="./node_modules/codemirror/mode/javascript/javascript.js"></script>
-  <script src="{{ xstatic('termjs', 'term.js') }}"></script>
+      <script src="./node_modules/codemirror/lib/codemirror.js"></script>
+      <script src="./node_modules/codemirror/mode/python/python.js"></script>
+      <script src="./node_modules/codemirror/mode/javascript/javascript.js"></script>
+
+<script src="{{ xstatic('termjs', 'term.js') }}"></script>
   <script src="{{ static('terminado.js') }}"></script>
 
   <title>Pixel Client</title>
@@ -30,12 +31,16 @@
         <div class="navbar-header">
           <h1> Pixel Client </h1>
         </div>
+
         <div class="navbar-right">
+
           <div class="dropdown">
+
             <button class="btn btn-secondary dropdown-toggle" type="button" id="language-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Language Selector
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+            <div class="dropdown-menu" aria-labelledby="language-selector">
               <a class="dropdown-item" href="#">Python</a>
               <a class="dropdown-item" href="#">Java</a>
               <a class="dropdown-item" href="#">C++</a>
@@ -76,43 +81,53 @@
 <span id="dummy-screen-rows" style="visibility:hidden;">01234567890123456789012345678901234567890123456789012345678901234567890123456789</span>
 </pre>
 
+  <div class="container" id="IDE">
 
-  <div id="info">
-    <h2>Information about Pixel</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec nulla condimentum ligula placerat sodales. Aliquam erat volutpat.
-    </p>
-    <code>print("Hello world")</code>
-    <p>
-      Phasellus eget consequat magna. Integer pharetra pretium sem in venenatis. Morbi vitae tristique dui, id sodales felis. </p>
-    <p>
-      Nunc eleifend, mauris ut porta vehicula, dolor libero lacinia nulla, vel rutrum felis elit eget ipsum. Phasellus molestie blandit tortor, ac fermentum risus faucibus sed. In quam quam, blandit eu tincidunt cursus, pretium id diam.
-    </p>
-    <p>
-      Nullam nunc nulla, eleifend eu leo sed, semper eleifend ex.
-    </p>
-    <a href="/next">Next Lesson</a>
+    <div class="row">
+
+      <div id="info" class="col-sm-4 ">
+        <h2>Information about Pixel</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec nulla condimentum ligula placerat sodales. Aliquam erat volutpat.
+        </p>
+        <code>print("Hello world")</code>
+        <p>
+          Phasellus eget consequat magna. Integer pharetra pretium sem in venenatis. Morbi vitae tristique dui, id sodales felis. </p>
+        <p>
+          Nunc eleifend, mauris ut porta vehicula, dolor libero lacinia nulla, vel rutrum felis elit eget ipsum. Phasellus molestie blandit tortor, ac fermentum risus faucibus sed. In quam quam, blandit eu tincidunt cursus, pretium id diam.
+        </p>
+        <p>
+          Nullam nunc nulla, eleifend eu leo sed, semper eleifend ex.
+        </p>
+        <a href="/next">Next Lesson</a>
+
+      </div>
+
+      <div id="input" class="col-sm-8">
+
+        <div id="terminal" class="row split content split-horizontal"></div>
+
+        <div id="editor" class="row split content split-horizontal">
+
+        </div>
+
+      </div>
+
+
+    </div>
+
   </div>
-
-  <div id="input">
-
-    <div id="terminal"></div>
-
-    <div id="editor"></div>
-
-  </div>
-
   <!-- scripts -->
-  <script src="./js/editor.js"></script>
-  <script>
-    let ws_url_path = "{{ws_url_path}}"
-  </script>
   <script src="https://unpkg.com/split-grid/dist/split-grid.js"></script>
   <script src="./js/bootstrap.js"></script>
   <script src="./js/script.js"></script>
   <script src="./js/main.js"></script>
 
-
+  <script src="./js/editor.js"></script>
 </body>
+
+<script>
+document.getElementById("editor").appendChild(myCodeMirror.display.wrapper);
+</script>
 
 </html>
