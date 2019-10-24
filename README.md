@@ -24,7 +24,7 @@ docker build -t pixel-client .
 
 # to build and run the application
 docker build -t pixel-client .
-docker run -d -p 3000:80 --name pixel_client pixel-client
+docker run -v /var/run/docker.sock:/var/run/docker.sock -p 3000:80 pixel-client
 ```
 
 ## Updating the server
@@ -37,7 +37,7 @@ docker build -t pixel-client .
 docker rm -f pixel_client
 
 # to run the new container
-docker run -d -p 3000:80 --name pixel_client pixel-client
+docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 3000:80 pixel-client
 ```
 
 
