@@ -8,14 +8,3 @@ string1 = "text"
 string2 = 'text'
 //But using "..." is more useful when the string has apostrophes as well
 string3 = "Here's a string that includes apostrophes"
-
-// Basic operators:
-one = 1
-two = 2
-//prints the sum of one and two
-print(one + two)
-
-hello = "hello"
-world = "world"
-//prints "hello world"
-print(hello + " " +  world)
