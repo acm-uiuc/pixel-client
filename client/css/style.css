@@ -4,7 +4,7 @@ html {
 
 header {
   /* grid-area: header; */
-  background-color: #5B6F81;
+  background-color: #344055;
   color: white;
   font-size: 18pt;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
@@ -74,3 +74,4 @@ body {
 .gutter.gutter-horizontal {
   cursor: ew-resize;
 }
+

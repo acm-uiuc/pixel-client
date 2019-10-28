@@ -49,3 +49,23 @@ function uploadCode() {
   console.log(response)
 });
 }
+
+function handleFiles(files) {
+files[0].text().then(function(text) { /* do something with the text */
+  fetch("./file", {
+  method: "post",
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+
+  //make sure to serialize your JSON body
+  body: JSON.stringify({
+    name: files[0].name,
+    contents: text
+  })
+})
+.then( (response) => {
+  console.log(response)
+});})
+}
