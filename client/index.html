@@ -12,11 +12,11 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/bootstrap.css">
 
-      <script src="./node_modules/codemirror/lib/codemirror.js"></script>
-      <script src="./node_modules/codemirror/mode/python/python.js"></script>
-      <script src="./node_modules/codemirror/mode/javascript/javascript.js"></script>
+  <script src="./node_modules/codemirror/lib/codemirror.js"></script>
+  <script src="./node_modules/codemirror/mode/python/python.js"></script>
+  <script src="./node_modules/codemirror/mode/javascript/javascript.js"></script>
 
-<script src="{{ xstatic('termjs', 'term.js') }}"></script>
+  <script src="{{ xstatic('termjs', 'term.js') }}"></script>
   <script src="{{ static('terminado.js') }}"></script>
 
   <title>Pixel Client</title>
@@ -40,7 +40,8 @@
 
             <button type="button" class="btn btn-secondary"> Upload A File </button>
 
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="language-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="language-selector"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Language Selector
             </button>
 
@@ -58,7 +59,8 @@
     </nav>
   </header>
 
-  <pre id="dummy-screen" style="visibility:hidden; border: white solid 5px; font-family: &quot;DejaVu Sans Mono&quot;, &quot;Liberation Mono&quot;, monospace; font-size: 11px;">0
+  <pre id="dummy-screen"
+    style="visibility:hidden; border: white solid 5px; font-family: &quot;DejaVu Sans Mono&quot;, &quot;Liberation Mono&quot;, monospace; font-size: 11px;">0
 1
 2
 3
@@ -90,30 +92,31 @@
     <div class="row">
 
       <div id="info" class="col-sm-4 ">
-        
-    <h2>
-      Welcome to the 1st lesson for Python!
-    </h2>
+
+        <h2>
+          Welcome to the 1st lesson for Python!
+        </h2>
         <p>
-                The simplest directive in Python is the "print" directive - it simply prints out a line and also includes a newline.
-        </p>
-                <p>
-                As the print statement is a function, it must be invoked using parentheses.
+          The simplest directive in Python is the "print" directive - it simply prints out a line and also includes a
+          newline.
         </p>
         <p>
-        The syntax is :
+          As the print statement is a function, it must be invoked using parentheses.
         </p>
-                <code>print("text")</code>
         <p>
-                The above code simply prints "text"
+          The syntax is :
         </p>
-                <p>
-                As an exercise, run the given starter code to print "Hello, world!"
+        <code>print("text")</code>
+        <p>
+          The above code simply prints "text"
         </p>
-    <p>
-    <a href="/next">Next Lesson</a>
-        
-        
+        <p>
+          As an exercise, run the given starter code to print "Hello, world!"
+        </p>
+        <p>
+          <a href="/next">Next Lesson</a>
+
+
       </div>
 
       <div id="input" class="col-sm-8">
@@ -141,7 +144,7 @@
 </body>
 
 <script>
-document.getElementById("editor").appendChild(myCodeMirror.display.wrapper);
+  document.getElementById("editor").appendChild(myCodeMirror.display.wrapper);
 </script>
 
 </html>
