@@ -69,3 +69,13 @@ files[0].text().then(function(text) { /* do something with the text */
   console.log(response)
 });})
 }
+function languageUpdate() {
+  console.log("Language Change");
+  var language = document.getElementById("language-selector").value;
+  myCodeMirror.setOption("mode", language);
+}
+
+// function myFunction() {
+//   var x = document.getElementById("mySelect").value;
+//   document.getElementById("demo").innerHTML = "You selected: " + x;
+// }

@@ -13,11 +13,14 @@
   <link rel="stylesheet" href="./css/bootstrap.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-      <script src="./node_modules/codemirror/lib/codemirror.js"></script>
-      <script src="./node_modules/codemirror/mode/python/python.js"></script>
-      <script src="./node_modules/codemirror/mode/javascript/javascript.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="{{ xstatic('termjs', 'term.js') }}"></script>
+  <script src="./node_modules/codemirror/lib/codemirror.js"></script>
+  <script src="./node_modules/codemirror/mode/python/python.js"></script>
+  <script src="./node_modules/codemirror/mode/haskell/haskell.js"></script>
+  <script src="./node_modules/codemirror/mode/ruby/ruby.js"></script>
+  <script src="./node_modules/codemirror/mode/javascript/javascript.js"></script>
+  <script src="./js/editor.js"></script>
+
+  <script src="{{ xstatic('termjs', 'term.js') }}"></script>
   <script src="{{ static('terminado.js') }}"></script>
 
   <title>Pixel Client</title>
@@ -37,12 +40,20 @@
 
           <div class="dropdown">
 
-            <button type="button" class="btn btn-primary" onclick="uploadCode()"> Upload Code </button>
-    
-            <input type="file" class="btn btn-secondary"
-      aria-describedby="inputGroupFileAddon01" onchange="handleFiles(this.files)">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="language-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Language Selector
+            <button type="button" class="btn btn-primary" onclick="uploadCode()"> Run </button>
+
+            <button type="button" class="btn btn-secondary"> Upload A File </button>
+
+            <select id="language-selector" onchange="languageUpdate()">
+              <option selected="selected" value="python">Python</option>
+              <option value="javascript">Javascript</option>
+              <option value="ruby">Ruby</option>
+              <option value="haskell">Haskell</option>
+            </select>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="language-selector"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Language Selector
             </button>
               <div class="dropdown-menu" aria-labelledby="language-selector">
                 <a class="dropdown-item" href="#">Python</a>
@@ -139,7 +150,6 @@
   <script src="./js/script.js"></script>
   <script src="./js/main.js"></script>
 
-  <script src="./js/editor.js"></script>
 </body>
 
 <script>
