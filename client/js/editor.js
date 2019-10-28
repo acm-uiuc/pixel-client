@@ -49,3 +49,9 @@ function uploadCode() {
   console.log(response)
 });
 }
+
+function languageUpdate() {
+  console.log("Language Change");
+  var language = document.getElementById("language-selector").value;
+  myCodeMirror.setOption("mode", language);
+}
