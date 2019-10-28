@@ -7,8 +7,8 @@ var protocol = (window.location.protocol.indexOf("https") === 0) ? "wss" : "ws";
 var ws_url = protocol+"://"+window.location.host+'/websocket';
 console.log(ws_url)
 function calculate_size(element) {
-    var rows = Math.max(2, Math.floor((element.innerHeight/2)/termRowHeight)-1);
-    var cols = Math.max(3, Math.floor((element.innerWidth/2)/termColWidth)-1);
+    var rows = Math.max(2, Math.floor((element.innerHeight)/termRowHeight)-1);
+    var cols = Math.max(3, Math.floor((element.innerWidth)/termColWidth)-1);
     console.log("resize:", termRowHeight, termColWidth, element.innerHeight,
                                     element.innerWidth, rows, cols);
     return {rows: rows, cols: cols};

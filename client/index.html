@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./css/editor.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/bootstrap.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <script src="./node_modules/codemirror/lib/codemirror.js"></script>
   <script src="./node_modules/codemirror/mode/python/python.js"></script>
@@ -54,23 +55,20 @@
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Language Selector
             </button>
-
-            <div class="dropdown-menu" aria-labelledby="language-selector">
-              <a class="dropdown-item" href="#">Python</a>
-              <a class="dropdown-item" href="#">Java</a>
-              <a class="dropdown-item" href="#">C++</a>
-              <a class="dropdown-item" href="#">Rust</a>
-              <a class="dropdown-item" href="#">Haskell</a>
-            </div>
+              <div class="dropdown-menu" aria-labelledby="language-selector">
+                <a class="dropdown-item" href="#">Python</a>
+                <a class="dropdown-item" href="#">Java</a>
+                <a class="dropdown-item" href="#">C++</a>
+                <a class="dropdown-item" href="#">Rust</a>
+                <a class="dropdown-item" href="#">Haskell</a>
+              </div>
           </div>
 
         </div>
       </div>
     </nav>
   </header>
-
-  <pre id="dummy-screen"
-    style="visibility:hidden; border: white solid 5px; font-family: &quot;DejaVu Sans Mono&quot;, &quot;Liberation Mono&quot;, monospace; font-size: 11px;">0
+  <pre id="dummy-screen" style="visibility:hidden; border: white solid 5px; font-family: &quot;DejaVu Sans Mono&quot;, &quot;Liberation Mono&quot;, monospace; font-size: 16pt;">0
 1
 2
 3
@@ -116,10 +114,12 @@
         <p>
           The syntax is :
         </p>
-        <code>print("text")</code>
-        <p>
-          The above code simply prints "text"
-        </p>
+                <code>print("text")</code>
+                <p>
+                </p>
+                <p>
+                The above code simply prints "text"
+                </p>
         <p>
           As an exercise, run the given starter code to print "Hello, world!"
         </p>
