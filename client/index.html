@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./node_modules/codemirror/lib/codemirror.css">
   <link rel="stylesheet" href="./css/editor.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script src="./node_modules/bootstrap/dist/css/bootstrap.css"></script>
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <script src="./node_modules/codemirror/lib/codemirror.js"></script>
@@ -38,31 +38,16 @@
 
         <div class="navbar-right">
 
-          <div class="dropdown">
+          <button type="button" class="btn btn-primary" onclick="uploadCode()"> Run </button>
 
-            <button type="button" class="btn btn-primary" onclick="uploadCode()"> Run </button>
+          <button type="button" class="btn btn-secondary"> Upload A File </button>
 
-            <button type="button" class="btn btn-secondary"> Upload A File </button>
-
-            <select id="language-selector" onchange="languageUpdate()">
-              <option selected="selected" value="python">Python</option>
-              <option value="javascript">Javascript</option>
-              <option value="ruby">Ruby</option>
-              <option value="haskell">Haskell</option>
-            </select>
-
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="language-selector"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Language Selector
-            </button>
-              <div class="dropdown-menu" aria-labelledby="language-selector">
-                <a class="dropdown-item" href="#">Python</a>
-                <a class="dropdown-item" href="#">Java</a>
-                <a class="dropdown-item" href="#">C++</a>
-                <a class="dropdown-item" href="#">Rust</a>
-                <a class="dropdown-item" href="#">Haskell</a>
-              </div>
-          </div>
+          <select id="language-selector" onchange="languageUpdate()">
+            <option selected="selected" value="python">Python</option>
+            <option value="javascript">Javascript</option>
+            <option value="ruby">Ruby</option>
+            <option value="haskell">Haskell</option>
+          </select>
 
         </div>
       </div>
@@ -114,12 +99,12 @@
         <p>
           The syntax is :
         </p>
-                <code>print("text")</code>
-                <p>
-                </p>
-                <p>
-                The above code simply prints "text"
-                </p>
+        <code>print("text")</code>
+        <p>
+        </p>
+        <p>
+          The above code simply prints "text"
+        </p>
         <p>
           As an exercise, run the given starter code to print "Hello, world!"
         </p>
