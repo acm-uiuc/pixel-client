@@ -42,6 +42,8 @@
 
           <button type="button" class="btn btn-secondary"> Upload A File </button>
 
+          <button type="button" class="btn btn-secondary" onclick="hideTextEditor()"> Hide/Show Text Editor </button>
+
           <select id="language-selector" onchange="languageUpdate()">
             <option selected="selected" value="python">Python</option>
             <option value="javascript">Javascript</option>
@@ -80,50 +82,42 @@
 <span id="dummy-screen-rows" style="visibility:hidden;">01234567890123456789012345678901234567890123456789012345678901234567890123456789</span>
 </pre>
 
-  <div class="container" id="IDE">
+  <div class="grid-container" id="IDE">
 
-    <div class="row">
+    <div id="info" class="">
 
-      <div id="info" class="col-sm-4 ">
-
-        <h2>
-          Welcome to the 1st lesson for Python!
-        </h2>
-        <p>
-          The simplest directive in Python is the "print" directive - it simply prints out a line and also includes a
-          newline.
-        </p>
-        <p>
-          As the print statement is a function, it must be invoked using parentheses.
-        </p>
-        <p>
-          The syntax is :
-        </p>
-        <code>print("text")</code>
-        <p>
-        </p>
-        <p>
-          The above code simply prints "text"
-        </p>
-        <p>
-          As an exercise, run the given starter code to print "Hello, world!"
-        </p>
-        <p>
-          <a href="/next">Next Lesson</a>
+      <h2>
+        Welcome to the 1st lesson for Python!
+      </h2>
+      <p>
+        The simplest directive in Python is the "print" directive - it simply prints out a line and also includes a
+        newline.
+      </p>
+      <p>
+        As the print statement is a function, it must be invoked using parentheses.
+      </p>
+      <p>
+        The syntax is :
+      </p>
+      <code>print("text")</code>
+      <p>
+      </p>
+      <p>
+        The above code simply prints "text"
+      </p>
+      <p>
+        As an exercise, run the given starter code to print "Hello, world!"
+      </p>
+      <p>
+        <a href="/next">Next Lesson</a>
 
 
-      </div>
+    </div>
 
-      <div id="input" class="col-sm-8">
 
-        <div id="terminal" class="row split content split-horizontal"></div>
+    <div id="terminal" class="row split content split-horizontal"></div>
 
-        <div id="editor" class="row split content split-horizontal">
-
-        </div>
-
-      </div>
-
+    <div id="editor" class="row split content split-horizontal">
 
     </div>
 

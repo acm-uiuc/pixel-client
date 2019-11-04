@@ -24,3 +24,10 @@
 //   sizes: [50, 50],
 //   minSize: 200,
 // })
+import Split from 'split-grid'
+
+
+function hideTextEditor() {
+  console.log("Hide text editor")
+  document.getElementById("editor").visibility: hidden;
+}
