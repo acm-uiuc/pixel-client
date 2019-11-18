@@ -4,30 +4,34 @@ fetch('../tutorials/lesson1_python.html')
     .then(response => response.text())
     .then((data) => {
         localStorage.setItem("1", data)
+        console.log("Refresh Lesson");
     })
 
 fetch('../tutorials/lesson2_python.html')
     .then(response => response.text())
     .then((data) => {
         localStorage.setItem("2", data)
+        console.log("Refresh Lesson");
     })
 
 fetch('../tutorials/lesson3_python.html')
     .then(response => response.text())
     .then((data) => {
         localStorage.setItem("3", data)
+        console.log("Refresh Lesson");
     })
 
 function lessonChange(type) {
-    console.log("Lesson Change");
 
     localStorage.currentLesson = document.getElementById("info");
 
-    if (type == "next") {
+    if (type == 1) {
         currentLesson++;
+        console.log("Next Lesson");
     }
-    else if (type == "previous") {
+    else if (type == 0) {
         currentLesson--;
+        console.log("Previous Lesson");
     }
 
     var lessonInfo = localStorage.getItem(currentLesson.toString);

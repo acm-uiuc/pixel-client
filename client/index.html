@@ -19,6 +19,8 @@
   <script src="./node_modules/codemirror/mode/ruby/ruby.js"></script>
   <script src="./node_modules/codemirror/mode/javascript/javascript.js"></script>
   <script src="./js/editor.js"></script>
+  
+  <script src="./js/storage.js"></script>
 
   <script src="{{ xstatic('termjs', 'term.js') }}"></script>
   <script src="{{ static('terminado.js') }}"></script>
@@ -109,10 +111,10 @@
         As an exercise, run the given starter code to print "Hello, world!"
       </p>
       <p>
-        <button type="button" class="btn btn-secondary" onclick="previousLesson()"> Next Lesson </button>
+        <button type="button" class="btn btn-secondary" onclick="lessonChange(1)"> Next Lesson </button>
       </p>
       <p>
-        <button type="button" class="btn btn-secondary" onclick="nextLesson()"> Next Lesson </button>
+        <button type="button" class="btn btn-secondary" onclick="lessonChange(0)"> Previous Lesson </button>
       </p>
     </div>
 
@@ -130,7 +132,6 @@
   <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
   <script src="./js/script.js"></script>
   <script src="./js/main.js"></script>
-  <script src="./js/storage.js"></script>
 
 </body>
 
