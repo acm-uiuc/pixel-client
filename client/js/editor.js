@@ -76,3 +76,6 @@ function languageUpdate() {
   var language = document.getElementById("language-selector").value;
   myCodeMirror.setOption("mode", language);
 }
+
+var map = {"Shift-Enter": function(cm){uploadCode();}}
+myCodeMirror.addKeyMap(map);
