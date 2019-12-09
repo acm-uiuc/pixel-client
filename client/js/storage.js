@@ -2,19 +2,18 @@ var currentLesson = 1;
 const FIRST_LESSON = 1;
 const LAST_LESSON = 4;
 
+for (let i = 0; i < LAST_LESSON; i++) {
+    fetch('./tutorials/startercode' + + i.toString() + '_python.html')
+        .then(function (resp) {
+            resp.text().then(function (text) {
+                localStorage.setItem(i.toString(), text);
+            })
+        });
+}
+
 function lessonChange(type) {
-    lessonUpdate(type);
-    // codeUpdate();
-}
 
-function codeUpdate() {
-
-}
-
-function lessonUpdate(type) {
-
-    console.log("Current Lesson: " + currentLesson);
-    console.log("Current Lesson Data Before: " + localStorage.currentLesson);
+    localStorage.currentLesson = myCodeMirror.getValue;
 
     if (type == 1 && currentLesson < LAST_LESSON) {
         currentLesson++;
@@ -23,10 +22,31 @@ function lessonUpdate(type) {
         currentLesson--;
     }
 
-    fetch('./tutorials/lesson' + currentLesson.toString() + '_python.html')
+    lessonUpdate(currentLesson);
+    codeUpdate(currentLesson);
+}
+
+function codeUpdate(lesson) {
+    myCodeMirror.setValue(localStorage.lesson);
+}
+
+function lessonUpdate(lesson) {
+    // localStorage.currentLesson = document.getElementById("info");
+    // var lessonInfo = localStorage.getItem(currentLesson.toString());
+    // document.getElementById("info").innerHTML = lessonInfo;
+
+    fetch('./tutorials/lesson' + lesson.toString() + '_python.html')
         .then(function (resp) {
-            resp.text().then(function(text) {
+            resp.text().then(function (text) {
                 document.getElementById("info").innerHTML = text;
             })
         });
+
+    // console.log("Next Lesson: " + currentLesson);
+    // console.log("Current Lesson Data After: " + localStorage.currentLesson.toString());
+
 }
+
+// var lessonUpdate = setInterval(function () {
+//     localStorage.setItem(currentLesson, document.getElementById("info"));
+// }, 60 * 1000);
