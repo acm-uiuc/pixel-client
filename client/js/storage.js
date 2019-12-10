@@ -1,42 +1,40 @@
 var currentLesson = 1;
+const FIRST_LESSON = 1;
+const LAST_LESSON = 4;
 
-fetch('../tutorials/lesson1_python.html')
-    .then(response => response.text())
-    .then((data) => {
-        localStorage.setItem("1", data)
-        console.log("Refresh Lesson");
-    })
-
-fetch('../tutorials/lesson2_python.html')
-    .then(response => response.text())
-    .then((data) => {
-        localStorage.setItem("2", data)
-        console.log("Refresh Lesson");
-    })
-
-fetch('../tutorials/lesson3_python.html')
-    .then(response => response.text())
-    .then((data) => {
-        localStorage.setItem("3", data)
-        console.log("Refresh Lesson");
-    })
-
-function lessonChange(type) {
-
-    localStorage.currentLesson = document.getElementById("info");
-
-    if (type == 1) {
-        currentLesson++;
-        console.log("Next Lesson");
-    }
-    else if (type == 0) {
-        currentLesson--;
-        console.log("Previous Lesson");
-    }
-
-    var lessonInfo = localStorage.getItem(currentLesson.toString);
+for (let i = 0; i < LAST_LESSON; i++) {
+    fetch('./tutorials/startercode' + i.toString() + '_python.txt')
+        .then(function (resp) {
+            resp.text().then(function (text) {
+                localStorage.setItem(i.toString(), text);
+            })
+        });
 }
 
-// var lessonUpdate = setInterval(function () {
-//     localStorage.setItem(currentLesson, document.getElementById("info"));
-// }, 60 * 1000);
+function lessonChange(type) {
+    var increment = 0;
+    localStorage.setItem(currentLesson.toString(), myCodeMirror.getValue());
+
+    if (type == 1 && currentLesson < LAST_LESSON) {
+        currentLesson++;
+    }
+    else if (type == 0 && currentLesson > FIRST_LESSON) {
+        currentLesson--;
+    }
+
+    lessonUpdate(currentLesson);
+    codeUpdate(currentLesson);
+}
+
+function codeUpdate(lesson) {
+    myCodeMirror.setValue(localStorage.getItem(lesson));
+}
+
+function lessonUpdate(lesson) {
+    fetch('./tutorials/lesson' + lesson.toString() + '_python.html')
+        .then(function (resp) {
+            resp.text().then(function (text) {
+                document.getElementById("info").innerHTML = text;
+            })
+        });
+}
