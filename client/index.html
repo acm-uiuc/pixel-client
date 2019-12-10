@@ -19,7 +19,7 @@
   <script src="./node_modules/codemirror/mode/ruby/ruby.js"></script>
   <script src="./node_modules/codemirror/mode/javascript/javascript.js"></script>
   <script src="./js/editor.js"></script>
-  
+
   <script src="./js/storage.js"></script>
 
   <script src="{{ xstatic('termjs', 'term.js') }}"></script>
@@ -29,7 +29,7 @@
 
 </head>
 
-<body>
+<body onload="loadHome()">
   <!-- test size: 25x80 -->
   <header>
     <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
@@ -46,6 +46,8 @@
 
           <button type="button" class="btn btn-secondary" onclick="hideTextEditor()"> Hide/Show Text Editor </button>
 
+          <button type="button" class="btn btn-secondary" onclick="hideLessons()"> Hide/Show Lessons </button>
+
           <select id="language-selector" onchange="languageUpdate()">
             <option selected="selected" value="python">Python</option>
             <option value="javascript">Javascript</option>
@@ -57,7 +59,8 @@
       </div>
     </nav>
   </header>
-  <pre id="dummy-screen" style="visibility:hidden; border: white solid 5px; font-family: &quot;DejaVu Sans Mono&quot;, &quot;Liberation Mono&quot;, monospace; font-size: 16pt;">0
+  <pre id="dummy-screen" style="visibility:hidden; border: white solid 5px; font-family: &quot;DejaVu Sans Mono&quot;, &quot;Liberation Mono&quot;, monospace; font-size: 16pt;">
+0
 1
 2
 3
@@ -86,7 +89,7 @@
 
   <div class="grid-container" id="IDE">
 
-    <div id="info" class="">
+    <div id="lesson">
 
       <h2>
         Welcome to the 1st lesson for Python!
@@ -117,7 +120,6 @@
         <button type="button" class="btn btn-secondary" onclick="lessonChange(0)"> Previous Lesson </button>
       </p>
     </div>
-
 
     <div id="terminal" class="row split content split-horizontal"></div>
 

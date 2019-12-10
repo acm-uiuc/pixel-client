@@ -1,33 +1,38 @@
-//
-// Split(['#info', '#input'], {
-//
-//   elementStyle: (dimension, size, gutterSize) => ({
-//     'flex-basis': `calc(${size}% - ${gutterSize}px)`,
-//   }),
-//   gutterStyle: (dimension, gutterSize) => ({
-//     'flex-basis': `${gutterSize}px`,
-//   }),
-//
-//   sizes: [25, 75],
-//   minSize: 200,
-//   direction: 'vertical',
-// })
-//
-// Split(['#terminal', '#editor'], {
-//   elementStyle: (dimension, size, gutterSize) => ({
-//     'flex-basis': `calc(${size}% - ${gutterSize}px)`,
-//   }),
-//   gutterStyle: (dimension, gutterSize) => ({
-//     'flex-basis': `${gutterSize}px`,
-//   }),
-//
-//   sizes: [50, 50],
-//   minSize: 200,
-// })
-import Split from 'split-grid'
+// import Split from './node_modules/split-grid'
+
+Split({
+  columnGutters: [{
+    track: 1,
+    element: document.querySelector("vertical-gutter"),
+  }],
+  rowGutters: [{
+    track: 1,
+    element: document.querySelector("horizontal-gutter"),
+  }]
+})
 
 
 function hideTextEditor() {
-  console.log("Hide text editor")
-  document.getElementById("editor").visibility: hidden;
+  console.log("hide/show text editor");
+  var x = document.getElementById("editor");
+  if (x.style.visibility == "hidden") {
+    x.style.visibility = "visible"
+  } else {
+    x.style.visibility = "hidden";
+  }
 }
+
+function hideLessons() {
+  console.log("hide/show lessons");
+  var x = document.getElementById("info");
+  if (x.style.visibility == "hidden") {
+    x.style.visibility = "visible"
+  } else {
+    x.style.visibility = "hidden";
+  }
+}
+
+// document.onload = function() {
+//   console.log("loading starter text");
+//   document.getElementById("info").innerHTML='<object type="text/html" data="./tutorials/lesson1_python.html"></object>';
+// }
