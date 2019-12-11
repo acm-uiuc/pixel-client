@@ -3,10 +3,10 @@ const FIRST_LESSON = 1;
 const LAST_LESSON = 4;
 
 for (let i = 0; i < LAST_LESSON; i++) {
-    fetch('./tutorials/startercode' + i.toString() + '_python.txt')
+    fetch('./tutorials/startercode' + (i+1).toString() + '_python.txt')
         .then(function (resp) {
             resp.text().then(function (text) {
-                localStorage.setItem(i.toString(), text);
+                localStorage.setItem((i+1).toString(), text);
             })
         });
 }
