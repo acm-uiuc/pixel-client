@@ -1,10 +1,29 @@
-// Storing values in variables: 
-//x stores integer values
+# Storing values in variables: 
+# x stores integer values
 x = 1
-//y stores floating type values
+
+# y stores floating type values
 y = 1.0
-//string1 and string2 both store string values
+
+# string1 and string2 both store string values
 string1 = "text"
 string2 = 'text'
-//But using "..." is more useful when the string has apostrophes as well
+
+# But using "..." is more useful when the string has apostrophes as well
 string3 = "Here's a string that includes apostrophes"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

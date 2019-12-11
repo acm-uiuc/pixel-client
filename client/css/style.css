@@ -28,8 +28,9 @@ header>h1 {
   margin-bottom: 5px;
 }
 
-#info {
+#lesson {
   grid-area: info;
+  height: 90vh;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow: scroll;
   padding: 30px;
@@ -47,6 +48,8 @@ header>h1 {
 
 #editor {
   grid-area: editor;
+  height: 100%;
+  width: 100%;
 }
 
 code {

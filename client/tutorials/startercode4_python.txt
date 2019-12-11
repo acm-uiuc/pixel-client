@@ -1,22 +1,29 @@
-//Example of a for loop which prints all whole numbers from 0 to 6:
+# Example of a for loop which prints all whole numbers from 0 to 6:
 for integer in range(7):
     print(integer)
 
-//Example of a while loop which prints all whole numbers from 0 to 6:
+
+# Example of a while loop which prints all whole numbers from 0 to 6:
 integer = 0
 while integer < 7:
     print(integer)
     integer = integer + 1
 
-//Example of a for loop which checks if a list contains 4:
+
+# Example of a for loop which checks if a list contains 4:
 newlist = [1, 2, 4, 7]
 for integer in newlist:
     if integer == 4:
         print("found")
         break
 
-//Example of a for loop which prints all whole numbers from 0 to 6, excluding 4:
+
+# Example of a for loop which prints all whole numbers from 0 to 6, excluding 4:
 for integer in range(7):
     if integer == 4:
         continue
     print(integer)
+
+
+
+

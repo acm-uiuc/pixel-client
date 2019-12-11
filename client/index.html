@@ -40,10 +40,10 @@
 
         <div class="navbar-right">
 
-          <button type="button" class="btn btn-primary" onclick="uploadCode()"> Run </button>
-
+          <button type="button" class="btn btn-primary" onclick="uploadCode()"> Upload Script </button>
+<!--
           <button type="button" class="btn btn-secondary"> Upload A File </button>
-
+-->
           <button type="button" class="btn btn-secondary" onclick="hideTextEditor()"> Hide/Show Text Editor </button>
 
           <button type="button" class="btn btn-secondary" onclick="hideLessons()"> Hide/Show Lessons </button>
@@ -113,12 +113,10 @@
       <p>
         As an exercise, run the given starter code to print "Hello, world!"
       </p>
-      <p>
-        <button type="button" class="btn btn-secondary" onclick="lessonChange(1)"> Next Lesson </button>
-      </p>
-      <p>
-        <button type="button" class="btn btn-secondary" onclick="lessonChange(0)"> Previous Lesson </button>
-      </p>
+  <p>
+    <button type="button" class="btn btn-secondary" onclick="lessonChange(0)"> Previous Lesson </button>
+    <button type="button" class="btn btn-secondary" onclick="lessonChange(1)"> Next Lesson </button>
+  </p>
     </div>
 
     <div id="terminal" class="row split content split-horizontal"></div>

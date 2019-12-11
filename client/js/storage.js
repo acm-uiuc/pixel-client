@@ -34,7 +34,7 @@ function lessonUpdate(lesson) {
     fetch('./tutorials/lesson' + lesson.toString() + '_python.html')
         .then(function (resp) {
             resp.text().then(function (text) {
-                document.getElementById("info").innerHTML = text;
+                document.getElementById("lesson").innerHTML = text;
             })
         });
 }

@@ -1,13 +1,29 @@
-// Basic operators:
+# Basic operators:
 one = 1
 two = 2
-//prints the sum of one and two
+
+# prints the sum of one and two
 print(one + two)
 
 int_three = 3
-float_three = (float)int_three
+float_three = float(int_three)
 
 hello = "hello"
 world = "world"
-//prints "hello world"
+
+# prints "hello world"
 print(hello + " " +  world)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
